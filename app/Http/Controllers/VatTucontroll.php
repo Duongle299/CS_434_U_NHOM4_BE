@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ThemmoiRequest;
 use App\Models\Vattu;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class VatTucontroll extends Controller
             'data' => $data
         ]);
     }
-    public function create(Request $request)
+    public function create(ThemmoiRequest $request)
     {
         $vatTu=Vattu::create([
             'ma_vat_tu'        => $request->ma_vat_tu,
@@ -33,7 +34,7 @@ class VatTucontroll extends Controller
         ]);
 
     }
-    public function update(Request $request)
+    public function update(ThemmoiRequest $request)
     {
         Vattu::where('ma_vat_tu' , $request->ma_vat_tu)->update([
             'ma_vat_tu'        => $request->ma_vat_tu,
